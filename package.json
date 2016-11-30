@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "babel-node build/startmsg.js",
     "start":"npm-run-all --parallel security-check open:src",
-    "open:src":"node build/server.js",
+    "open:src":"babel-node build/server.js",
     "security-check": "nsp check",
     "share": "lt --port 5000",
     "localtunnel": "lt --port 5000",
