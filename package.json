@@ -4,7 +4,7 @@
   "description": "JavaScript development environment",
   "scripts": {
     "prestart": "babel-node build/startmsg.js",
-    "start":"npm-run-all --parallel security-check open:src lint:watch",
+    "start":"npm-run-all --parallel security-check open:src lint:watch test:watch",
     "open:src":"babel-node build/server.js",
     "lint": "esw webpack.config.*, src, build --color",
     "lint:watch": "npm run lint -- --watch",
@@ -12,7 +12,8 @@
     "share": "lt --port 5000",
     "localtunnel": "lt --port 5000",
     "share": "npm-run-all --parallel open:src localtunnel",
-    "test": "mocha --reporter progress build/testSetup.js \"src/**/*.test.js\""
+    "test": "mocha --reporter progress build/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "klintg",
   "license": "MIT",
